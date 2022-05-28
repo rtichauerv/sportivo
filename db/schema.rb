@@ -10,21 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_28_223406) do
-  create_table "activities", force: :cascade do |t|
-    t.integer "creator_id", null: false
-    t.string "title"
-    t.text "description"
-    t.datetime "datetime"
-    t.string "location"
-    t.integer "places"
-    t.integer "price"
-    t.string "category"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["creator_id"], name: "index_activities_on_creator_id"
-  end
-
+ActiveRecord::Schema[7.0].define(version: 2022_05_28_223123) do
   create_table "users", force: :cascade do |t|
     t.string "full_name"
     t.date "birth"
@@ -33,5 +19,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_28_223406) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "activities", "creators"
 end
