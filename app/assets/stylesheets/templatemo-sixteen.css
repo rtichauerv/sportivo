@@ -426,7 +426,7 @@ header .navbar {
 	top: 30px;
 	right: 30px;
 	font-size: 18px;
-	color: #121212;
+	color: #195dd3;
 }
 
 .event-item .down-content p {
@@ -824,7 +824,7 @@ footer .inner-content p a {
 	margin-top: 100px;
 }
 
-.contact-form input {
+.event-form input {
 	font-size: 14px;
 	width: 100%;
 	height: 44px;
@@ -835,12 +835,12 @@ footer .inner-content p a {
 	margin-bottom: 30px;
 }
 
-.contact-form input:focus {
+.event-form input:focus {
 	box-shadow: none;
 	border: 1px solid #eee;
 }
 
-.contact-form textarea {
+.event-form textarea {
 	font-size: 14px;
 	width: 100%;
 	min-width: 100%;
@@ -852,12 +852,12 @@ footer .inner-content p a {
 	margin-bottom: 30px;
 }
 
-.contact-form textarea:focus {
+.event-form textarea:focus {
 	box-shadow: none;
 	border: 1px solid #eee;
 }
 
-.contact-form button.filled-button {
+.event-form button.filled-button {
 	background-color: #195dd3;
 	color: #fff;
 	font-size: 14px;
@@ -872,7 +872,7 @@ footer .inner-content p a {
 	cursor: pointer;
 }
 
-.contact-form button.filled-button:hover {
+.event-form button.filled-button:hover {
 	background-color: #121212;
 	color: #fff;
 }
