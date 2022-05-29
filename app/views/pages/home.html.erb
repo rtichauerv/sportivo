@@ -11,6 +11,15 @@
 
     <title>Sportivo for FIN</title>
 
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -21,21 +30,24 @@
         <div class="container">
           <a class="navbar-brand" href="#"><h2>Sportivo <em>for Fin</em></h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-              <%= link_to "Home", root_path, class:"nav-link"%>
+              <%= link_to "Inicio", root_path, class:"nav-link"%>
               </li> 
               <li class="nav-item">
-              <%= link_to "Join an event", activities_path, class: "nav-link"%>
+              <%= link_to "Únete a un evento", activities_path, class: "nav-link"%>
               </li>
               <li class="nav-item">
-              <%= link_to "Post an event", new_activity_path, class:"nav-link" %>
+              <%= link_to "Crea un Evento", new_activity_path, class:"nav-link" %>
               </li>
               <li class="nav-item">
-              <%= link_to "Create user", new_user_path, class:"nav-link" %>
+              <%= link_to "Crea tu usuario", new_user_path, class:"nav-link" %>
               </li>
             </ul>
           </div>
@@ -43,12 +55,13 @@
       </nav>
     </header>
 
+
     <div class="banner header-text">      
-        <div class="banner-item-01">
+        <div class="banner-item-01 ">
           <div class="text-content">
             <h4>Fintual Intensivo Natales</h4>
             <h2>Descubre tu próxima aventura</h2>
-          </div>
+        </div>
         </div>
     </div>
 
@@ -57,10 +70,28 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h2>Próximos eventos</h2>
+              <h2>Los más recientes</h2>
             </div>
           </div>
-          
+          <div class="col-md-12">
+        <div class="filters-content">
+          <div class="row grid">                
+          <% @activities.to_enum.with_index.reverse_each do |activity, i| %>
+            <% break if @activities.length() - i == 4 %>
+            <div id="<%= dom_id activity %>" class="col-lg-4 col-md-4 all sports">
+              <div class="event-item">
+              <%= image_tag (activity.category + "_.jpg"), class: "img-responsive"%>
+                <div class="down-content">
+                <h4><%= link_to activity.title, activity %></h4>
+                <p><strong>Quién invita:</strong> <%= activity.creator %></p>
+                <p><strong>Cuándo es:</strong>
+                <%= activity.datetime.strftime("%-d/%-m/%y: %H:%M")%></p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>          
         </div>
       </div>
     </div>
@@ -83,12 +114,14 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+
     <!-- Additional Scripts -->
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/owl.js"></script>
     <script src="assets/js/slick.js"></script>
     <script src="assets/js/isotope.js"></script>
     <script src="assets/js/accordions.js"></script>
+
 
     <script language = "text/Javascript"> 
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
@@ -103,5 +136,3 @@
 
 
   </body>
-
-</html>

@@ -18,7 +18,7 @@
             </div>
             <br>
             <div class="right-content">
-              <h5>Who's joining?</h5>
+              <h5>¿Quiénes van?</h5>
               <br>
               <ul>
                 <% @activities_users.each do |activity_user| %>
@@ -30,7 +30,7 @@
               <br>
               <ul>
               <li><%= link_to "Edit this activity", edit_activity_path(@activity) %></li>
-              <li><%= link_to "Back to activities", activities_path %></li>
+              
               <!--
               <li><%= button_to "Delete this activity", @activity, method: :delete %></li>
               -->
@@ -39,15 +39,15 @@
           </div>
           <div class="col-md-6">
             <div class="left-content">
-              <h4>When do we meet?</h4>
+              <h4>📆 Fecha y hora</h4>
               <p>
               <%= @activity.datetime.strftime("%-d/%-m/%y: %H:%M") %>
               </p>
-              <h4>Where do we meet?</h4>
+              <h4>📍 Lugar</h4>
               <p> <%= @activity.location %> </p>
-              <h4>How many people?</h4>
-              <p>No limit</p>
-              <h4>Información adicional</h4>
+              <h4>🔢 Aforo de la actividad</h4>
+              <p>Sin aforo</p>
+              <h4>📣 Información adicional</h4>
               <p><%= @activity.description %></p>
               <% activity = @activity %>
               <%= form_for :activity, url: activity_savenew_path(activity.id), method: :post do |form| %>
@@ -66,7 +66,14 @@
               <% end %>
               <br>
               <br>
-              <a href="all_events.html"><h4>Back to events</h4></a>
+
+              <strong>Comparte esta actividad en redes sociales</strong>
+              <ul class="social-icons">
+                            <li><a href="whatsapp://send?text=El enlace a la página" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a></li>
+                            <li><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-text="Hola! únete a mi evento" data-show-count="false"><i class="fa fa-twitter"></i></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></li>
+              </ul>
+              </p>
+              <%= link_to "Back to activities", activities_path%>
             </div>
           </div>
           </div>
@@ -75,16 +82,29 @@
     </div>
   
 
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="inner-content">
-              <p>Copyright &copy; 2022 SPORTIVO CO., LTDA.
-            
-            - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/isotope.js"></script>
+    <script src="assets/js/accordions.js"></script>
+
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+
+  </body>
