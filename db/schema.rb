@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_28_223406) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_29_011300) do
   create_table "activities", force: :cascade do |t|
-    t.integer "creator_id", null: false
+    t.string "creator"
     t.string "title"
     t.text "description"
     t.datetime "datetime"
@@ -22,7 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_28_223406) do
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["creator_id"], name: "index_activities_on_creator_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,5 +32,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_28_223406) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "activities", "creators"
 end

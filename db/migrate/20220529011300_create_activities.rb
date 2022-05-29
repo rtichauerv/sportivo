@@ -1,7 +1,7 @@
 class CreateActivities < ActiveRecord::Migration[7.0]
   def change
     create_table :activities do |t|
-      t.references :creator, null: false, foreign_key: true
+      t.string :creator
       t.string :title
       t.text :description
       t.datetime :datetime
