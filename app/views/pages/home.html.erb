@@ -38,7 +38,7 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-              <%= link_to "Home", root_path, class:"nav-link"%>
+              <%= link_to "Inicio", root_path, class:"nav-link"%>
               </li> 
               <li class="nav-item">
               <%= link_to "Únete a un evento", activities_path, class: "nav-link"%>
@@ -57,11 +57,11 @@
 
 
     <div class="banner header-text">      
-        <div class="banner-item-01">
+        <div class="banner-item-01 ">
           <div class="text-content">
             <h4>Fintual Intensivo Natales</h4>
             <h2>Descubre tu próxima aventura</h2>
-          </div>
+        </div>
         </div>
     </div>
 
@@ -83,8 +83,8 @@
               <%= image_tag (activity.category + "_.jpg"), class: "img-responsive"%>
                 <div class="down-content">
                 <h4><%= link_to activity.title, activity %></h4>
-                <p><strong>Creator:</strong> <%= activity.creator %></p>
-                <p><strong>Datetime:</strong>
+                <p><strong>Quién invita:</strong> <%= activity.creator %></p>
+                <p><strong>Cuándo es:</strong>
                 <%= activity.datetime.strftime("%-d/%-m/%y: %H:%M")%></p>
               </div>
             </div>
