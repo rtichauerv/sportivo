@@ -80,12 +80,6 @@
                     </fieldset>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
-                  <h6>Danos tu email</h6>
-                  <fieldset>
-                    <%= form.text_field :full_name, type:"text", class:"form-control", placeholder:"fin@fintual.com" %>
-                  </fieldset>
-                </div>
-                  <div class="col-lg-12 col-md-12 col-sm-12">
                     <h6>Cuál es tu fecha de nacimiento?</h6>
                     <fieldset>
                       <%= form.text_field :birth, type:"date", class:"form-control", placeholder:"Date" %>
@@ -97,6 +91,12 @@
                       <%= form.select :category, ['Masculino', 'Femenino','No binario','Otro / Prefiero no decir'], placeholder:"Evento" %>
                     </fieldset>
                   </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                  <h6>Danos tu email</h6>
+                  <fieldset>
+                    <%= form.text_field :email, type:"text", class:"form-control", placeholder:"fin@fintual.com" %>
+                  </fieldset>
+                </div>
                   
                  
                   <br><br>

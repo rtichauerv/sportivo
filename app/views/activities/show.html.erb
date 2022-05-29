@@ -21,9 +21,11 @@
               <h5>Who's joining?</h5>
               <br>
               <ul>
-                <li>&#127939;Pau</li>
-                <li>&#127939;Roni</li>
-                <li>&#127939;Pancho</li>
+                <% @activities_users.each do |activity_user| %>
+                  <%if activity_user.activity == @activity %>
+                    <li><%= activity_user.user.email %></li>
+                  <% end %>
+                <% end %>
               </ul>
               <br>
               <ul>
@@ -47,23 +49,21 @@
               <p>No limit</p>
               <h4>Información adicional</h4>
               <p><%= @activity.description %></p>
-              
-              <form id="event" action="" method="post">
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                    <h5>Join this event</h5>
-                    <br>
-                    <fieldset>
-                      <input name="event-name" type="text" class="form-control" id="participant-name" placeholder="Your Name" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="filled-button">Join event</button>
-                    </fieldset>
-                  </div>
+              <% activity = @activity %>
+              <%= form_for :activity, url: activity_savenew_path(activity.id), method: :post do |form| %>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <h6>Únete a la actividad</h6>
+                  <fieldset>
+                    <%= form.text_field :users, type:"text", class:"form-control", placeholder:"Déjanos tu email" %>
+                  </fieldset>
                 </div>
-              </form>
+                <br><br>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <button type="submit" id="form-submit" class="filled-button">Confirmar</button>
+                  </fieldset>
+                </div>
+              <% end %>
               <br>
               <br>
               <a href="all_events.html"><h4>Back to events</h4></a>

@@ -8,6 +8,14 @@ class ActivitiesController < ApplicationController
 
   # GET /activities/1 or /activities/1.json
   def show
+    @activities_users = ActivityUser.all
+  end
+
+  def savenew
+    activity_id = params[:activity_id]
+    email = params[:activity][:users]
+    ActivityUser.create!(activity: Activity.find(activity_id),user: User.find_by(email: email))
+    redirect_to Activity.find(activity_id)
   end
 
   # GET /activities/new
