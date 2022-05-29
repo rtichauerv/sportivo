@@ -1,12 +1,11 @@
 <div id="<%= dom_id activity %>">
+<div class="event-item">
+<a href="#"><img src="assets/images/event_01.jpg" alt=""></a>
+<div class="down-content">
+  <a href="event_01.html"><h4><%= activity.title %></h4></a>
   <p>
     <strong>Creator:</strong>
     <%= activity.creator %>
-  </p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= activity.title %>
   </p>
 
   <p>
@@ -38,5 +37,7 @@
     <strong>Category:</strong>
     <%= activity.category %>
   </p>
-
+  <%= link_to "Ver detalle", activity %>
+</div>
+</div>
 </div>

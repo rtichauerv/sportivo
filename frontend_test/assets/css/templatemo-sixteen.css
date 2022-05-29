@@ -318,7 +318,7 @@ header .navbar {
 
 .banner-item-01 {
 	padding: 200px 0px;
-	background-image: url(../images/header-fin.jpeg);
+	background-image: url('/images/header-fin.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
