@@ -27,7 +27,6 @@ class UsersController < ApplicationController
       if @user.save
         format.html { redirect_to user_url(@user), notice: "Usuario creado ✅" }
         format.json { render :show, status: :created, location: @user }
-        UserNotifierMailer.send_signup_email(@user).deliver
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
