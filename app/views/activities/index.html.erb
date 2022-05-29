@@ -14,7 +14,8 @@
           <div class="filters-content">
               <div class="row grid">
                   
-  <% @activities.each do |activity| %>
+  <% @activities.each_with_index do |activity, i| %>
+    <% break if i == 1 %>
     <div id="<%= dom_id activity %>" class="col-lg-4 col-md-4 all sports">
       <div class="event-item">
       <%= image_tag (activity.category + ".jpg"), class: "img-responsive"%>
