@@ -1,9 +1,159 @@
-<h1>New user</h1>
+<% user = @user %>
+<%= form_with scope: :user, url: users_path, local: true do |form| %>
 
-<%= render "form", user: @user %>
 
-<br>
+  <head>
 
-<div>
-  <%= link_to "Back to users", users_path %>
-</div>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Sportivo for FIN</title>
+
+
+  </head>
+
+  <body>
+    <div class="jumper">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <!-- Header -->
+    <header class="">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"><h2>Sportivo <em>for Fin</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="all_events.html">Join an Event</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="new_event.html">Post an Event</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Content -->
+
+    <div class="banner header-text">
+      <div class="owl-banner owl-carousel">
+        <div class="banner-item-01">
+          <div class="text-content">
+            <h4>at Puerto Natales</h4>
+            <h2>Join your Next Adventure</h2>
+          </div>
+        </div>
+       
+    </div>
+    
+    <div class="create-event">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Send us a Message</h2>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="event-form">
+              <form id="event" action="" method="post">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h6>Inserta tu nombre</h6>
+                    <fieldset>
+                      <%= form.text_field :full_name, type:"text", class:"form-control", placeholder:"Juán Pérez" %>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                  <h6>Danos tu email</h6>
+                  <fieldset>
+                    <%= form.text_field :full_name, type:"text", class:"form-control", placeholder:"fin@fintual.com" %>
+                  </fieldset>
+                </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h6>Cuál es tu fecha de nacimiento?</h6>
+                    <fieldset>
+                      <%= form.text_field :birth, type:"date", class:"form-control", placeholder:"Date" %>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h6>Cuál es tu género?</h6>
+                    <fieldset>
+                      <%= form.select :category, ['Masculino', 'Femenino','No binario','Otro / Prefiero no decir'], placeholder:"Evento" %>
+                    </fieldset>
+                  </div>
+                  
+                 
+                  <br><br>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <button type="submit" id="form-submit" class="filled-button">Send Message</button>
+                    </fieldset>
+                  </div>
+                </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="inner-content">
+              <p>Copyright &copy; 2022 SPORTIVO CO., LTDA.
+            
+            - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/isotope.js"></script>
+    <script src="assets/js/accordions.js"></script>
+
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+
+  </body>
+<% end %>
