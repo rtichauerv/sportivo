@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_29_011300) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_29_041206) do
   create_table "activities", force: :cascade do |t|
     t.string "creator"
     t.string "title"
@@ -24,12 +24,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_29_011300) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "activities_users", id: false, force: :cascade do |t|
+    t.integer "activity_id", null: false
+    t.integer "user_id", null: false
+    t.index ["activity_id", "user_id"], name: "index_activities_users_on_activity_id_and_user_id"
+    t.index ["user_id", "activity_id"], name: "index_activities_users_on_user_id_and_activity_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "full_name"
     t.date "birth"
     t.string "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
   end
 
 end

@@ -1,48 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-
-    <title>Sportivo for FIN</title>
-
-  </head>
-
-  <body>
-
-    <!-- Header -->
-
-<header class="">
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand" href="#"><h2>Sportivo <em>for Fin</em></h2></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-        <%= link_to "Home", root_path, class:"nav-link"%>
-        </li> 
-        <li class="nav-item">
-        <%= link_to "Join an event", activities_path, class: "nav-link"%>
-        </li>
-        <li class="nav-item">
-        <%= link_to "Post an event", new_activity_path, class:"nav-link" %>
-        </li>
-        <li class="nav-item">
-        <%= link_to "Create user", new_user_path, class:"nav-link" %>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-</header>
+<%= render "navbar" %>
 
 <p> style="color: green"><%= notice %></p>
 <div class="best-features about-features">
@@ -58,7 +14,7 @@
           </div>
           <div class="col-md-6">
             <div class="right-image">
-            <%= image_tag (@activity.category + ".jpg"), class: "img-responsive"%>
+            <%= image_tag (@activity.category + "_.jpg"), class: "img-responsive"%>
             </div>
             <br>
             <div class="right-content">
@@ -73,7 +29,9 @@
               <ul>
               <li><%= link_to "Edit this activity", edit_activity_path(@activity) %></li>
               <li><%= link_to "Back to activities", activities_path %></li>
-              <li><%= link_to "Destroy this activity", @activity, method: :delete %></li>
+              <!--
+              <li><%= button_to "Delete this activity", @activity, method: :delete %></li>
+              -->
               </ul>
             </div>
           </div>
