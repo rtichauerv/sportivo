@@ -4042,6 +4042,10 @@ input[type="button"].btn-block {
   align-items: center;
 }
 
+.navbar-collapse.collapse.in {
+  display: block!important;
+}
+
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
