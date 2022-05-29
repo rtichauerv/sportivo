@@ -15,7 +15,7 @@ class ActivitiesTest < ApplicationSystemTestCase
     click_on "New activity"
 
     fill_in "Category", with: @activity.category
-    fill_in "Creator", with: @activity.creator_id
+    fill_in "Creator", with: @activity.creator
     fill_in "Datetime", with: @activity.datetime
     fill_in "Description", with: @activity.description
     fill_in "Location", with: @activity.location
@@ -33,7 +33,7 @@ class ActivitiesTest < ApplicationSystemTestCase
     click_on "Edit this activity", match: :first
 
     fill_in "Category", with: @activity.category
-    fill_in "Creator", with: @activity.creator_id
+    fill_in "Creator", with: @activity.creator
     fill_in "Datetime", with: @activity.datetime
     fill_in "Description", with: @activity.description
     fill_in "Location", with: @activity.location
