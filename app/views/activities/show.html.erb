@@ -1,10 +1,132 @@
-<p style="color: green"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="en">
 
-<%= render @activity %>
+  <head>
 
-<div>
-  <%= link_to "Edit this activity", edit_activity_path(@activity) %> |
-  <%= link_to "Back to activities", activities_path %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-  <%= button_to "Destroy this activity", @activity, method: :delete %>
-</div>
+    <title>Sportivo for FIN</title>
+
+  </head>
+
+  <body>
+
+    <!-- Header -->
+
+<header class="">
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="#"><h2>Sportivo <em>for Fin</em></h2></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+        <%= link_to "Home", root_path, class:"nav-link"%>
+        </li> 
+        <li class="nav-item">
+        <%= link_to "Join an event", activities_path, class: "nav-link"%>
+        </li>
+        <li class="nav-item">
+        <%= link_to "Post an event", new_activity_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to "Create user", new_user_path, class:"nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
+<p> style="color: green"><%= notice %></p>
+<div class="best-features about-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">            
+              <h2>
+              <%= @activity.title %>
+              </h2>
+              <h4>Creada por <%= @activity.creator %> </h4>              
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="right-image">
+            <%= image_tag (@activity.category + ".jpg"), class: "img-responsive"%>
+            </div>
+            <br>
+            <div class="right-content">
+              <h5>Who's joining?</h5>
+              <br>
+              <ul>
+                <li>&#127939;Pau</li>
+                <li>&#127939;Roni</li>
+                <li>&#127939;Pancho</li>
+              </ul>
+              <br>
+              <ul>
+              <li><%= link_to "Edit this activity", edit_activity_path(@activity) %></li>
+              <li><%= link_to "Back to activities", activities_path %></li>
+              <li><%= link_to "Destroy this activity", @activity, method: :delete %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="left-content">
+              <h4>When do we meet?</h4>
+              <p>
+              <%= @activity.datetime.strftime("%-d/%-m/%y: %H:%M") %>
+              </p>
+              <h4>Where do we meet?</h4>
+              <p> <%= @activity.location %> </p>
+              <h4>How many people?</h4>
+              <p>No limit</p>
+              <h4>Información adicional</h4>
+              <p><%= @activity.description %></p>
+              
+              <form id="event" action="" method="post">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h5>Join this event</h5>
+                    <br>
+                    <fieldset>
+                      <input name="event-name" type="text" class="form-control" id="participant-name" placeholder="Your Name" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <button type="submit" id="form-submit" class="filled-button">Join event</button>
+                    </fieldset>
+                  </div>
+                </div>
+              </form>
+              <br>
+              <br>
+              <a href="all_events.html"><h4>Back to events</h4></a>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="inner-content">
+              <p>Copyright &copy; 2022 SPORTIVO CO., LTDA.
+            
+            - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
