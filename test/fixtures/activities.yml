@@ -1,20 +1,20 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  creator: one
+  creator: MyString
   title: MyString
   description: MyText
-  datetime: 2022-05-28 18:34:06
+  datetime: 2022-05-28 21:13:00
   location: MyString
   places: 1
   price: 1
   category: MyString
 
 two:
-  creator: two
+  creator: MyString
   title: MyString
   description: MyText
-  datetime: 2022-05-28 18:34:06
+  datetime: 2022-05-28 21:13:00
   location: MyString
   places: 1
   price: 1
