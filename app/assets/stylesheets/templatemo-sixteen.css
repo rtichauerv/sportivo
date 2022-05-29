@@ -331,9 +331,9 @@ header .navbar {
 .banner .text-content {
 	position: absolute;
 	top: 50%;
-	transform: translateY(-50%);
+	transform: translateY(-50%); 
 	text-align: center;
-	width: 100%;	
+	width: 100%;
 }
 
 .banner .text-content h4 {
@@ -345,7 +345,7 @@ header .navbar {
 }
 
 .card-overlay {
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.1);
   }
 
 .banner .text-content h2 {

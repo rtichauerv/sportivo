@@ -2,17 +2,24 @@
 
 <% activity = @activity %>
 <%= form_with scope: :activity, url: activities_path, local: true do |form| %>
-    
-    <div class="create-event">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-            <br>
-              <h2>Sube tu evento</h2>
-            </div>
-          </div>
-          <div class="col-md-5">
+  
+  <div class="container">
+  <div class="create-event">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="section-heading">            
+        <br>
+        <br>
+      </div>
+    </div>
+        
+        <div class="col-md-12">
+        <div class="section-heading">
+      <h2>Crea un evento</h2>
+      <p>Para que otras personas puedan unirse</p>
+    </div>
+    </div>
+          <div class="col-md-8">
             <div class="event-form">
               <form id="event" action="" method="post">
                 <div class="row">
@@ -82,8 +89,6 @@
             </div>
           </div>
 
-        </div>
-      </div>
   
 
     <footer>
