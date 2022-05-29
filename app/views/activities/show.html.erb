@@ -18,7 +18,7 @@
             </div>
             <br>
             <div class="right-content">
-              <h5>Who's joining?</h5>
+              <h5>¿Quiénes van?</h5>
               <br>
               <ul>
                 <li>&#127939;Pau</li>
@@ -37,15 +37,15 @@
           </div>
           <div class="col-md-6">
             <div class="left-content">
-              <h4>When do we meet?</h4>
+              <h4>📆 Fecha y hora</h4>
               <p>
               <%= @activity.datetime.strftime("%-d/%-m/%y: %H:%M") %>
               </p>
-              <h4>Where do we meet?</h4>
+              <h4>📍 Lugar</h4>
               <p> <%= @activity.location %> </p>
-              <h4>How many people?</h4>
-              <p>No limit</p>
-              <h4>Información adicional</h4>
+              <h4>🔢 Aforo de la actividad</h4>
+              <p>Sin aforo</p>
+              <h4>📣 Información adicional</h4>
               <p><%= @activity.description %></p>
               
               <form id="event" action="" method="post">
