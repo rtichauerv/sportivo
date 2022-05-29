@@ -313,7 +313,7 @@ header .navbar {
 .banner {
 	position: relative;
 	text-align: center;
-	padding-top: 80px;
+	padding-top: 80px;	
 }
 
 .banner-item-01 {
@@ -321,11 +321,11 @@ header .navbar {
 	background-image: url('/images/header-fin.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: center center;	
 }
 
 .banner .banner-item {
-	max-height: 600px;
+	max-height: 600px;	
 }
 
 .banner .text-content {
@@ -333,7 +333,7 @@ header .navbar {
 	top: 50%;
 	transform: translateY(-50%);
 	text-align: center;
-	width: 100%;
+	width: 100%;	
 }
 
 .banner .text-content h4 {
@@ -343,6 +343,10 @@ header .navbar {
 	font-weight: 700;
 	margin-bottom: 15px;
 }
+
+.card-overlay {
+	background: rgba(0, 0, 0, 0.5);
+  }
 
 .banner .text-content h2 {
 	color: #fff;

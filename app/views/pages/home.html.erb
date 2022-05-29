@@ -26,16 +26,16 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-              <%= link_to "Home", root_path, class:"nav-link"%>
+              <%= link_to "Inicio", root_path, class:"nav-link"%>
               </li> 
               <li class="nav-item">
-              <%= link_to "Join an event", activities_path, class: "nav-link"%>
+              <%= link_to "Ver eventos", activities_path, class: "nav-link"%>
               </li>
               <li class="nav-item">
-              <%= link_to "Post an event", new_activity_path, class:"nav-link" %>
+              <%= link_to "Crear evento", new_activity_path, class:"nav-link" %>
               </li>
               <li class="nav-item">
-              <%= link_to "Create user", new_user_path, class:"nav-link" %>
+              <%= link_to "Nuevo usuario", new_user_path, class:"nav-link" %>
               </li>
             </ul>
           </div>
@@ -70,8 +70,8 @@
               <%= image_tag (activity.category + "_.jpg"), class: "img-responsive"%>
                 <div class="down-content">
                 <h4><%= link_to activity.title, activity %></h4>
-                <p><strong>Creator:</strong> <%= activity.creator %></p>
-                <p><strong>Datetime:</strong>
+                <p><strong>Quién invita:</strong> <%= activity.creator %></p>
+                <p><strong>Cuándo es:</strong>
                 <%= activity.datetime.strftime("%-d/%-m/%y: %H:%M")%></p>
               </div>
             </div>

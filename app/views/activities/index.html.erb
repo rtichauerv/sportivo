@@ -8,6 +8,7 @@
       <div class="col-md-12">
         <div class="section-heading">
             <h2>Todos los eventos</h2>
+            <p>Descubre todos los eventos disponibles para ti</p>
         </div>
       </div>
       <div class="col-md-12">
@@ -19,8 +20,8 @@
               <%= image_tag (activity.category + "_.jpg"), class: "img-responsive"%>
                 <div class="down-content">
                 <h4><%= link_to activity.title, activity %></h4>
-                <p><strong>Creator:</strong> <%= activity.creator %></p>
-                <p><strong>Datetime:</strong>
+                <p><strong>Quién invita:</strong> <%= activity.creator %></p>
+                <p><strong>Cuándo es:</strong>
                 <%= activity.datetime.strftime("%-d/%-m/%y: %H:%M")%></p>
               </div>
             </div>
