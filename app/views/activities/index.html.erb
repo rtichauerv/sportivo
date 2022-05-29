@@ -2,43 +2,35 @@
 
 <p> style="color: green"><%= notice %></p>
     
-    <div class="events">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
+<div class="events">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
         <div class="section-heading">
-              <h2>Todos los eventos</h2>
-            </div>
+            <h2>Todos los eventos</h2>
         </div>
-        <div class="col-md-12">
-          <div class="filters-content">
-              <div class="row grid">
-                  
-  <% @activities.each_with_index do |activity, i| %>
-    <% break if i == 1 %>
-    <div id="<%= dom_id activity %>" class="col-lg-4 col-md-4 all sports">
-      <div class="event-item">
-      <%= image_tag (activity.category + "_.jpg"), class: "img-responsive"%>
-        <div class="down-content">
-        <h4><%= link_to activity.title, activity %></h4>
-        <p>
-        <strong>Creator:</strong>
-        <%= activity.creator %>
-        </p>
-        <p>
-        <strong>Datetime:</strong>
-        <%= activity.datetime.strftime("%-d/%-m/%y: %H:%M") %>
-        </p>
+      </div>
+      <div class="col-md-12">
+        <div class="filters-content">
+          <div class="row grid">                
+            <% @activities.each_with_index do |activity, i| %>
+            <div id="<%= dom_id activity %>" class="col-lg-4 col-md-4 all sports">
+              <div class="event-item">
+              <%= image_tag (activity.category + "_.jpg"), class: "img-responsive"%>
+                <div class="down-content">
+                <h4><%= link_to activity.title, activity %></h4>
+                <p><strong>Creator:</strong> <%= activity.creator %></p>
+                <p><strong>Datetime:</strong>
+                <%= activity.datetime.strftime("%-d/%-m/%y: %H:%M")%></p>
+              </div>
+            </div>
+          </div>
+          <% end %>
         </div>
       </div>
     </div>
-
-  <% end %>
-  </div>
   </div>
 </div>
-
-
 
 <footer>
   <div class="container">

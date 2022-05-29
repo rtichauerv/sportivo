@@ -57,10 +57,28 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h2>Próximos eventos</h2>
+              <h2>Los más recientes</h2>
             </div>
           </div>
-          
+          <div class="col-md-12">
+        <div class="filters-content">
+          <div class="row grid">                
+          <% @activities.to_enum.with_index.reverse_each do |activity, i| %>
+            <% break if @activities.length() - i == 4 %>
+            <div id="<%= dom_id activity %>" class="col-lg-4 col-md-4 all sports">
+              <div class="event-item">
+              <%= image_tag (activity.category + "_.jpg"), class: "img-responsive"%>
+                <div class="down-content">
+                <h4><%= link_to activity.title, activity %></h4>
+                <p><strong>Creator:</strong> <%= activity.creator %></p>
+                <p><strong>Datetime:</strong>
+                <%= activity.datetime.strftime("%-d/%-m/%y: %H:%M")%></p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>          
         </div>
       </div>
     </div>
