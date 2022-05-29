@@ -23,7 +23,7 @@
               <ul>
                 <% @activities_users.each do |activity_user| %>
                   <%if activity_user.activity == @activity %>
-                    <li><%= activity_user.user.email %></li>
+                    <li>✅ <%= activity_user.user.full_name %></li>
                   <% end %>
                 <% end %>
               </ul>
