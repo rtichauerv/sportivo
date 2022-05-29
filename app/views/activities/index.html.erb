@@ -32,6 +32,9 @@
           <li class="nav-item">
           <%= link_to "Post an event", new_activity_path, class:"nav-link" %>
           </li>
+          <li class="nav-item">
+              <%= link_to "Create user", new_user_path, class:"nav-link" %>
+          </li>
         </ul>
       </div>
     </div>
@@ -48,10 +51,58 @@
         </div>
     </div>
     
-<div id="activities">
+    <div class="events">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="filters">
+            <ul>
+                <li class="active" data-filter="*">All Events</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="filters-content">
+              <div class="row grid">
+                  
   <% @activities.each do |activity| %>
-    <%= render activity %>
+    <div id="<%= dom_id activity %>" class="col-lg-4 col-md-4 all sports">
+      <div class="event-item">
+      <%= image_tag (activity.category + ".jpg"), class: "img-responsive"%>
+        <div class="down-content">
+        <h4><%= link_to activity.title, activity %></h4>
+        <p>
+        <strong>Creator:</strong>
+        <%= activity.creator %>
+        </p>
+        <p>
+        <strong>Datetime:</strong>
+        <%= activity.datetime.strftime("%-d/%-m/%y: %H:%M") %>
+        </p>
+        </div>
+      </div>
+    </div>
+
   <% end %>
+  </div>
+  </div>
 </div>
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="inner-content">
+          <p>Copyright &copy; 2022 SPORTIVO CO., LTDA.
+        
+        - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 
 
